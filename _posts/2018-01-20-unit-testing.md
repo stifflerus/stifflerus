@@ -5,14 +5,6 @@ title: >
 ---
 Most developers and managers agree that unit testing improves code quality, but the term itself is ill-defined. The definition of a unit test can vary from company to company, team to team, and even developer to developer. The truth is that the "unit" part of unit testing only describes one aspect of a test: the size of the component under test. There exists a whole family test types that address small units of functionality, making them unit tests, but deviate considerably from what programmers in industry would consider a unit test.
 
-# Unit Test Myths
-- Unit tests have to be automated
-- Unit tests have to be black box
-- Unit tests have to be white box
-- Unit tests should test all cases
-- Unit tests should only test happy paths
-- Unit tests cannot have dependencies
-
 # Many Dimensions of Test Types
 There are at least four dimensions that characterize a software test. 'Unit' is a term that describes where a test falls only in one of these dimensions.
 ## Component Scale
@@ -29,3 +21,14 @@ Notice how every single dimension is actually a spectrum with many (sometimes li
 
 # Different Tests for Different Components
 There is no best type of unit test. There are only best practices that describe what types of tests are typically the most useful. Best practices are not universal, however. Different types of tests should be considered for each component under test, and used when they are deemed to be the most useful. For example, unit testing a component that is highly database dependent is rarely useful without including the database. However, that would formally be considered an integration test. As mentioned above, test completeness is rarely achievable, but should be strived for whenever it is possible. Grey box testing may be useful for developers to test for correct operation of components, but externally facing components and libraries benefit much more greatly from black box tests.
+
+# Unit Test Myths
+* **Unit tests have to be automated** - Test automation only describes the execution style of a test, and does not preclude it from being a unit test. Unit tests can be run manually, although automated tests are arguably more useful. The point is that automation is not the defining feature of a unit test. 
+* **Unit tests have to be black box** - Unit tests can be written in black box or white box or grey box form. 
+* **Unit tests have to be white box** - See above.
+* **Unit tests should test all cases** - While this is rarely possible, it only addresses the completeness dimension of testing. It does not preclude a test from being a unit test.
+* **Unit tests should only test happy paths** - See above.
+* **Unit tests cannot have dependencies** - This is generally given as a best practice to avoid accidentally writing integration tests. However, there are instances where multiple components together can be views as a single unit. An example would be a component that is tightly coupled to a database or persistent storage system. If two components are tightly coupled, and small in comparison to the scale of the overall system, they can be considered a single unit. Therefore, testing them together can still be considered unit testing.
+
+# Final Thoughts
+The "unit" part of unit testing only addresses one quality of the test. When you don't mean to refer to the entire set of \\(27\\) types of unit tests, you should tighten your definition of the types of tests you are looking for. For example: "automated, black box unit tests that cover all known corner cases."
