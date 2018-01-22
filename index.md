@@ -1,7 +1,5 @@
 ---
-layout: center
+layout: home
 ---
-
-## About Me
 
 I am a software engineer from Lehigh Valley, Pennsylvania. 
