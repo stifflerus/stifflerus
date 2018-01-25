@@ -1,0 +1,14 @@
+---
+layout: post
+title: Javascript function this
+---
+
+this is problamatic
+
+simple function call vs function called from instantiated object
+
+this not set vs this set to instance of object
+
+confusing
+
+discourages functional idioms like passing the function to map instead of defining a lambda expression
