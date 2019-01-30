@@ -1,8 +1,10 @@
 {% assign feed_path = "/feed.xml" %}
+{% assign pgpkey_path = "/assets/robert_stiffler_pub.gpg" %}
 {% if site.feed and site.feed.path %}
   {% assign feed_path = site.feed.path %}
 {% endif %}
-<span class="copyleft">&copy;</span> {{ site.author }} - 
+<span class="copyleft">&copy;</span> {{ site.author }} -
 <a href="https://jekyllrb.com">Jekyll</a> &amp;
-<a href="https://github.com/yous/whiteglass">whiteglass</a> - Subscribe via
-<a href="{{ feed_path | absolute_url }}">RSS</a>
+<a href="https://github.com/yous/whiteglass">whiteglass</a></br>Subscribe via
+<a href="{{ feed_path | absolute_url }}">RSS</a> -
+<a href="{{ pgpkey_path | absolute_url }}">PGP key</a>

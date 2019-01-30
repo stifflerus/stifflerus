@@ -21,12 +21,10 @@ description: >- # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://stiffler.us" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  stifflerus
-comments: true
 
 # Build settings
 markdown: kramdown
 plugins:
-  - jekyll-archives
   - jekyll-paginate
   - jekyll-sitemap
 
@@ -34,11 +32,4 @@ permalink: /blog/:slug/
 paginate_path: /blog/posts/:num/
 paginate: 5
 
-jekyll-archives:
-  enabled:
-    - categories
-    - tags
-  layout: category_archives
-  permalinks:
-    category: /blog/categories/:name/
-    tag: /blog/tags/:name/
+exclude: ruby
