@@ -32,4 +32,4 @@ permalink: /blog/:slug/
 paginate_path: /blog/posts/:num/
 paginate: 5
 
-exclude: ruby
+exclude: [ruby]
