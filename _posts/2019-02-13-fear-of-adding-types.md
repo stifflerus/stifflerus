@@ -3,14 +3,9 @@ layout: post
 title: "Fear of Adding Types: Model too big, model too small"
 ---
 
-- existing antipatterns of "fear of adding classes" and "fear of adding tables"
-- propose a new antipatter called "fear of adding types" or "fear of adding models" or "mega model"
-- asdf
+The goal of any model is to create a logical system that can be used to simulate the behavior of a system (the problem domain). The properties, rules, and behaviors of interest in the problem domain should be reproduced in the model as closely as possible or practical. In computer programming, models are created by defining types. Type are really a way of defining a set of values, so by creating a model, what is really happening is we are defining a set of values. In order for the model to most closely match the problem domain, we should strive for the model space to exactly equal the domain space.
 
-# Models the wrong size
-A problem arises when the set of values that are valid for your type is a different
-size than the set of values that are logically valid for your problem domain. This
-can occur in two ways:
+A problem arises when the set of values that are valid for our model is a different size than the set of values that are logically valid for our problem domain. This can occur in two ways.
 
 ## Model Too Small
 In *model too small*, the model space is smaller than the domain space. This means that the model does not cover all of the possible use cases in the problem domain. Some of the possible use cases are not representable in the model space.
@@ -27,7 +22,9 @@ This model does well with representing a dog, but it falls short when it tries t
 ``` haskell
 Pet { name = "snowball", hasWoof = False }
 ```
-Is this `Pet` a cat or a dog? Since the model space is smaller than the domain space, there must be either collisions in representation (ambiguous values), or domain values that are unrepresentable entirely.
+Is this `Pet` a cat or a dog? There is no way to distinguish between a cat and a dog with `hasWoof = False`. Since the model space is smaller than the domain space, there must be either collisions in representation (ambiguous values), or domain values that are unrepresentable entirely.
+
+*Model too small* is bad because ambiguity in the representation of values is bad. Ambiguous models encourages incorrect, complex, or arbitrary logic for distinguishing between subtypes. *Model too small* can also set limitations, by limiting the values that can be represented in the model space. This can end up as a unnecessary technical restriction on the input data, that is only because of the inability of the model to represent it.
 
 ### Typical Symptoms
 In this example we see many of the typical symptoms of *model too small*
@@ -46,7 +43,7 @@ Reconsidering our problem domain of cats and dogs, a model that is too big might
 data Pet = Pet { name :: String, hasWoof :: Maybe Bool, hasMeow :: Maybe Bool }
 ~~~
 
-This model has no problems representing both cats and dogs. Unlike in the *model too small* example, it is easy to tell a cat from a dog. Cats have `hasWoof = Nothing` and dogs have `hasMeow = Nothing`. It is possible to represent dogs with `hasWoof = False`, and cats with `hasMeow = False` unambiguously. These were the cases that were missing from the *model too small* example. However, too large a model presents another problem. It is possible to represent in the model values that are not valid in the domain.
+This model has no problems representing both cats and dogs. Unlike in the *model too small* example, it is easy to tell a cat from a dog. Cats have `hasWoof = Nothing` and dogs have `hasMeow = Nothing`. It is possible to represent dogs with `hasWoof = False`, and cats with `hasMeow = False` unambiguously. These were the cases that were ambiguous in the *model too small* example. However, too large a model presents another problem. It is possible to represent values that are not valid in the domain.
 
 ~~~ haskell
 Pet { name = "catdog", hasWoof = True, hasMeow = True }
@@ -54,26 +51,28 @@ Pet { name = "catdog", hasWoof = True, hasMeow = True }
 Pet { name = "datcog", hasWoof = Nothing, hasMeow = Nothing }
 ~~~
 
+The first example is invalid because neither a cat nor a dog can have both properties `hasWoof` and `hasMeow` defined. Only one should ever be defined. The second example has the opposite problem, where neither `hasWoof`, nor `hasMeow` is defined. These are examples of values which are inside the model space, but outside of our desired domain space.
+
+*Model too big* is more common in practice than *model to small*. Big models tend to disperse validation logic throughout the program, to wherever there is code that deals with the model. This is because many of the domain logic invariants that could be guaranteed by a smaller, more specific model are lacking in a big model. This means that invariants have to be double checked everywhere the model is used. *Model too big* also encourages complex validation logic in general.
+
 ### Typical Symptoms
-- Many unrelated properties combined into one model ("melting pot model")
-- Many or most properties are unnecessarily optional in the model
-- Implicit rules for which optional properties are expected to be defined
-  - "if property A is defined, then property B will also be defined"
-  - "Either property A or property B will be defined"
+- Many unrelated properties combined into one big model (melting pot model)
+- Many or most of the properties have to be made optional
+- Care must be taken not to accept value outside of the domain space
+
+From a model that is too big, we can improve it by identifying distinct uses cases. Decompose the big model into many smaller models, one for each use case. Then, combine the models together into a sum type. Good languages should have direct support for sum types, but they can be simulated in other languages by using tagged unions.
+
 
 ## Model Just Right
-The solution to this problem is to ensure that the model space matches the domain space as closely as possible.  From a model that is too big, we can improve by identifying distinct uses cases. Decompose the big model into many smaller models, one for each use case. Then, combine the models together into a sum type. Good languages should have direct support for sum types, but they can be used in languages that don't, by using tagged unions.
-
+The solution to this problem is to ensure that the model space matches the domain space as closely as possible. Here is how a model can be defined for cats and dogs, that avoids all of the problems of the examples above.
 ~~~ haskell
 data Pet = Cat { name :: String, hasMeow :: Bool }
          | Dog { name :: String, hasWoof :: Bool }
 ~~~
 
-# Exceptions
-Some logical constraints cannot be encoded into standard type systems without introducing dependent types. Dependent types are a type system where type can depend on values, rather than depending only on other types. Dependent types allow the type system to encoded first-order logic properties, such as "a pair of integers where the first is greater than the second". There is virtually no support for dependent types in popular programming languages. Only research and experimental languages like Idris, Coq, et. al. support dependent types. We are not able to encode all first-order domain logic into models using non-dependent programming languages. For this reason, this article is about the failure to encode zeroeth-order domain logic (that which can be expressed using non-depedent types) into models.
+Notice that the sum type restricts the possible values so that only `hasMeow` xor `hasWoof` can be defined. This encodes a domain logic restraint into the type system that was not included in the model before.
 
-# Common Rebuttals
-- Fear or misunderstanding of sum types
-- Perception that a singular big model is simpler than the sum of many smaller models, depsite the fact that a "too big" model contains implicit (and often undocumented) domain logic that many smaller models can encode in to the type system.
-- Model too big is more common than model too small
-- Big models tend to disperse validations logic throughout the program, wherever there is code that deals with the model. This is because many of the domain logic invariants that could be guaranteed by a smaller, more specific model are lacking in the big model. This means the invariants have to be checked anywhere the model is used.
+### Exceptions
+Some logical constraints cannot be encoded into standard type systems without introducing dependent types. Dependent types are a types system where type can depend on values, rather than depending only on other types. Dependent types allow the type system to encoded first-order logic properties, such as "a pair of integers where the first is greater than the second". There is virtually no support for dependent types in popular programming languages at the time of writing. Only research and experimental languages like Idris and Coq support dependent types. Unfortunately we are not able to encode first-order domain logic into models using non-dependently typed programming languages.
+
+For this reason, this article only applies to the failure to encode zeroeth-order domain logic (that which can be expressed using non-depedent types) into models.
