@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Fear of Adding Types: Model too big, model too small"
+title: "Antipattern: Model too big, model too small"
 ---
 
 The goal of any model is to create a logical system that can be used to simulate the behavior of a system (the problem domain). The properties, rules, and behaviors of interest in the problem domain should be reproduced in the model as closely as possible or practical. In computer programming, models are created by defining types. Type are really a way of defining a set of values, so by creating a model, what is really happening is we are defining a set of values. In order for the model to most closely match the problem domain, we should strive for the model space to exactly equal the domain space.
