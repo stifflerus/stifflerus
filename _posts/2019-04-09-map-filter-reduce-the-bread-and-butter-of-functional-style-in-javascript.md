@@ -267,3 +267,9 @@ separated, even when functions are combined together. To someone reading the cod
 it is extremely clear what is happening. Furthermore,
 function composition using pure functions scales to many functions. Composing
 more functions together is only a matter of chaining more things together.
+
+## Conclusion
+`map`, `filter`, and `reduce` are key functions in the functional style of
+programming in Javascript. Many common functions can be reduced to one of these three
+patterns. If you master the use of these three functions, you
+are off to a good start in your journey into functional programming.
