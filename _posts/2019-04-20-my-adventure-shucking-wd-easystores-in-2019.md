@@ -30,8 +30,8 @@ subreddit. There is a lot of information there if you are interested in shucking
 drives yourself, so I won't bore you with the details here. In a nutshell,
 shucking is when you take an external hard drive, and remove the case so that the
 bare drive can be used in a regular computer.
-That sound like a ridiculous way to go about obtaining hard drives, until you
-realize that you can save _a lot_ of money by doing it this way.
+That may sound like a ridiculous way to go about obtaining hard drives, until you
+realize that you can save _a lot_ of money by doing it that way.
 
 The target of my shuck was
 [WD Easystore 8TB external hard drives](https://www.bestbuy.com/site/wd-easystore-8tb-external-usb-3-0-hard-drive-black/5792401.p?skuId=5792401). Inside of these is a high-quality
@@ -45,13 +45,13 @@ were $250. That's a savings of **$90 per drive**!
 Shucking was surprisingly easy. There are a ton of videos online showing how to do
 it without breaking the tabs that hold the plastic case together. I found that the
 easiest way to open the case without breaking it is to use two small screwdrivers.
-Stick the screwdrivers into the gap between the front panel and the C-shaped piece
-of plastic that runs over the top, down the back, and under the bottom of the
-case. You want one screwdriver on the top, and one screwdriver on the bottom. Use
-the screwdrivers to leverage the case open. The only thing holding the case together
-are four plastic tabs at the back of the case. The top and bottom do not have tabs.
-If you use the screwdrivers to force the C-shaped piece of plastic straight back,
-the four tabs will pop open, and the C-shaped piece of plastic will slide out with
+Stick the screwdrivers into the gap between the black front panel and the gray
+back panel. You want one screwdriver at the top, and one screwdriver at the bottom. Use
+the screwdrivers to pry against the inside of the front panel and
+leverage the case open. The only thing holding the case together
+are four plastic tabs at the back. The top and bottom do not have tabs.
+If you force the gray back panel straight back,
+the four tabs will pop open, and the back panel will slide out with
 the hard drive.
 
 ## Results
@@ -76,3 +76,43 @@ can be explained because all four of the drive were manufactured at different ti
 Only the newer drives required the 3.3V fix. Having drives of different ages is
 actually a reliability bonus, since manufacturing defects tend to affect all
 drives in a batch more frequently.
+
+## Reuse
+I retired the old Seagate drives into the Easystore enclosures. They function perfectly
+and I now have 3x3TB external hard drives. Strangely enough, all of the drives
+work, despite one having been failed from the array. This is likely due to the
+lack of TLER on these drives. What likely happened is a drive encountered a bad
+sector and tried several time to reread it. Normally this is okay, and sometimes a
+drive is able to read the sector after a few tries. The problem is that this messes
+up the RAID controller (linux software RAID in this case). The RAID controller
+sees the drive stop responding for a long time and assumes that the drive has died.
+In reality, only a single sector has failed, but the drive is frozen trying to read it.
+This is the problem the TLER fixes. It sets a time limit for the drive to try
+rereading bad sectors. That way, the drive is never frozen long enough to be failed
+out of a RAID array.
+
+## New Server
+The new home server is up and running. I decided to go with 4x8TB drives in a
+RAID6 array. This gives me a total usable storage capacity of 16TB. RAID6 also
+has double redundancy. This means that the array can withstand two simultaneous drive
+failures without loss of data.
+
+The reason I decided to use RAID6 is twofold. Firstly,
+[RAID5 stopped working in 2009](https://www.zdnet.com/article/why-raid-5-stops-working-in-2009/).
+The rate of URE (unrecoverable read errors) per unit of data has not improved much
+over time, while hard drive size has increase dramatically. This means that UREs
+are *more likely* with larger drive sizes. The odds of a rebuild failure are high with a RAID5
+array. If a URE occurs on any of the remaining drives during a RAID5 rebuild,
+all data is lost, since there is no redundancy in the degraded state. Since any of
+drives can fail the entire rebuild, the risk of failure is the sum of the risk of
+all drives combined. RAID6 has a second level of redundancy, so a single URE does not cause the rebuild to fail.
+
+Secondly, if in the future I decide to add more drives, RAID6 has a better usable
+storage ratio than alternatives such as RAID1+0. RAID6 always uses two drives for
+parity, whereas RAID1+0 always uses half the number of drives in the array for
+parity. With only four drives, the usable storage ratio is the same between the
+two RAID levels. However, if more drives are added, RAID6 has the advantage of
+more usable storage, since the number of drives of parity is constant. RAID1+0 does
+have some advantages with reliability, however, my server is primarily for storing media,
+so ultra-high reliability is not really necessary. Nor are media files so important
+that losing them would be devastating. Also, as I said before, RAID is not a backup.
