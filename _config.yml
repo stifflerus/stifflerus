@@ -30,3 +30,5 @@ plugins:
 permalink: /blog/:title/
 paginate_path: /blog/posts/:num/
 paginate: 5
+
+exclude: [Makefile, LICENSE]
