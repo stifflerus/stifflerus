@@ -3,5 +3,7 @@
 main:
   - title: "Blog"
     url: /blog/
+  - title: "Links"
+    url: /links/
   - title: "GitHub"
     url: https://github.com/stifflerus

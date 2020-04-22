@@ -1,0 +1,157 @@
+links:
+  - title: Jargon File
+    url: http://www.catb.org/jargon/html/
+    category: computer
+  - title: The case of the 500-mile email
+    url: http://www.ibiblio.org/harris/500milemail.html
+    category: computer
+  - title: Do DOM tree elements with ids become global variables?
+    url: https://stackoverflow.com/questions/3434278/do-dom-tree-elements-with-ids-become-global-variables
+  - title: Incorporate monads and category theory
+    url: https://github.com/promises-aplus/promises-spec/issues/94
+  - title: A Case of the MUMPS
+    url: https://thedailywtf.com/articles/A_Case_of_the_MUMPS
+  - title: MUMPS Madness
+    url: https://thedailywtf.com/articles/MUMPS-Madness
+  - title: Revenge of the MUMPS Madness
+    url: https://thedailywtf.com/articles/Revenge-of-MUMPS-Madness!
+  - title: The Reverse Sear Is the Best Way to Cook a Steak, Period
+    url: https://www.seriouseats.com/2017/03/how-to-reverse-sear-best-way-to-cook-steak.html
+  - title: O RLY Cover Generator
+    url: https://dev.to/rly
+  - title: The fundamental problem of programming language package management
+    url: http://blog.ezyang.com/2014/08/the-fundamental-problem-of-programming-language-package-management/
+  - title: Don't Call Yourself A Programmer, And Other Career Advice
+    url: https://www.kalzumeus.com/2011/10/28/dont-call-yourself-a-programmer/
+  - title: Programming Sucks
+    url: https://www.stilldrinking.org/programming-sucks
+  - title: Why you should not use client-side window decorations…
+    url: https://blog.martin-graesslin.com/blog/2010/05/why-you-should-not-use-client-side-window-decorations/
+  - title: Object-Oriented Programming is Bad
+    url: https://www.youtube.com/watch?v=QM1iUe6IofM
+  - title: Lambda Calculus - Fundamentals of Lambda Calculus & Functional Programming in JavaScript
+    url: https://www.youtube.com/watch?v=3VQ382QG-y4
+  - title: REST APIs must be hypertext-driven
+    url: https://roy.gbiv.com/untangled/2008/rest-apis-must-be-hypertext-driven
+  - title: Architectural Styles and the Design of Network-based Software Architectures
+    url: https://www.ics.uci.edu/~fielding/pubs/dissertation/top.htm
+  - title: Electron considered harmful 
+    url: https://drewdevault.com/2016/11/24/Electron-considered-harmful.html
+  - title: Why client-side templating is wrong
+    url: https://www.onebigfluke.com/2015/01/experimentally-verified-why-client-side.html
+  - title: FLIF - Free Lossless Image Format
+    url: FLIF - Free Lossless Image Format
+  - title: Resource-oriented Client Architecture
+    url: https://roca-style.org/
+  - title: The Non-Programming Programmer
+    url: https://blog.codinghorror.com/the-nonprogramming-programmer/
+  - title: Why Can't Programmers.. Program?
+    url: https://blog.codinghorror.com/why-cant-programmers-program/
+  - title: Nobody Hates Software More Than Software Developers
+    url: https://blog.codinghorror.com/nobody-hates-software-more-than-software-developers/
+  - title: Separating Programming Sheep from Non-Programming Goats
+    url: https://blog.codinghorror.com/separating-programming-sheep-from-non-programming-goats/
+  - title: Codeless Code
+    url: http://thecodelesscode.com/contents
+  - title: Isomorphic Instruments
+    url: http://musicnotation.org/wiki/instruments/isomorphic-instruments/
+  - title: The Right to Read
+    url: https://www.gnu.org/philosophy/right-to-read.html
+  - title: The Problem of Central Planning
+    url: https://mises.org/library/problem-central-planning
+  - title: On the cruelty of really teaching computing science
+    url: https://www.cs.utexas.edu/users/EWD/transcriptions/EWD10xx/EWD1036.html
+  - title: Command-line Tools can be 235x Faster than your Hadoop Cluster
+    url: https://adamdrake.com/command-line-tools-can-be-235x-faster-than-your-hadoop-cluster.html
+  - title: xkcd
+    url: https://xkcd.com/
+  - title: Guerilla Open Access Manifesto
+    url: https://archive.org/stream/GuerillaOpenAccessManifesto/Goamjuly2008_djvu.txt
+  - title: The Hacker Manifesto
+    url: https://archive.org/stream/The_Conscience_of_a_Hacker/hackersmanifesto.txt
+  - title: Industrial Society and Its Future
+    url: https://archive.org/stream/IndustrialSocietyAndItsFuture-TheUnabombersManifesto/IndustrialSocietyAndItsFuture-theUnabombersManifesto_djvu.txt
+  - title: Dark or white color theme is better for the eyes?
+    url: https://ux.stackexchange.com/questions/53264/dark-or-white-color-theme-is-better-for-the-eyes
+  - title: Why Nothing Works Anymore
+    url: https://www.theatlantic.com/technology/archive/2017/02/the-singularity-in-the-toilet-stall/517551/
+  - title: PRISM Break
+    url: https://prism-break.org/en/
+  - title: uBlock Origin
+    url: https://github.com/gorhill/uBlock/
+  - title: Harmful Stuff
+    url: http://harmful.cat-v.org/
+  - title: Internet Pizza Server
+    url: http://beej.us/pizza/
+  - title: ZOMBO
+    url: https://html5zombo.com/
+  - title: Manifesto for Agile Software Development 
+    url: https://agilemanifesto.org/
+  - title: Progressive enhancement is still important
+    url: https://jakearchibald.com/2013/progressive-enhancement-still-important/
+  - title: Richardson Maturity Model
+    url: https://www.martinfowler.com/articles/richardsonMaturityModel.html
+  - title: Why I hate your Single Page App
+    url: https://www.freecodecamp.org/news/why-i-hate-your-single-page-app-f08bb4ff9134
+  - title: The Programmer Dress Code
+    url: https://www.simplethread.com/the-programmer-dress-code/
+  - title: What Happened When I Peeked Into My node_modules Directory
+    url: https://medium.com/s/silicon-satire/i-peeked-into-my-node-modules-directory-and-you-wont-believe-what-happened-next-b89f63d21558
+  - title: Fantasy Land Specification
+    url: https://github.com/fantasyland/fantasy-land
+  - title: On the foolishness of "natural language programming"
+    url: https://www.cs.utexas.edu/users/EWD/transcriptions/EWD06xx/EWD667.html
+  - title: The Hundred-Year Language
+    url: http://www.paulgraham.com/hundred.html
+  - title: Apps considered harmful
+    url: https://ijosblog.blogspot.com/2012/05/apps-considered-harmful.html
+  - title: Why we don't chuck our readers into web apps
+    url: https://bitemyapp.com/blog/why-we-dont-chuck-readers-into-web-apps/
+  - title: Advent of Code
+    url: https://adventofcode.com/
+  - title: Project Euler
+    url: https://projecteuler.net/
+  - title: Web Bloat Score
+    url: https://www.webbloatscore.com/
+  - title: The Website Obesity Crisis
+    url: https://idlewords.com/talks/website_obesity.htm
+  - title: 'Mindfuck: The Reverse State Monad'
+    url: https://lukepalmer.wordpress.com/2008/08/10/mindfuck-the-reverse-state-monad/
+  - title: The Dumb Device Counterculture
+    url: https://medium.com/s/story/the-dumb-device-counterculture-74b4972b7dcc
+  - title: DRM in Cars Will Drive Consumers Crazy
+    url: https://www.eff.org/deeplinks/2013/11/drm-cars-will-drive-consumers-crazy
+  - title: If Programming Languages Were Weapons
+    url: https://www.techworm.net/2016/06/programming-languages-weapons.html
+  - title: We are actively destroying the web
+    url: https://gomakethings.com/we-are-actively-destroying-the-web/
+  - title: The No Code Delusion
+    url: https://www.alexhudson.com/2020/01/13/the-no-code-delusion/
+  - title: Motherfucking Website
+    url: http://motherfuckingwebsite.com/
+  - title: It's the Future
+    url: https://circleci.com/blog/its-the-future/
+  - title: How it feels to learn JavaScript in 2016
+    url: https://hackernoon.com/how-it-feels-to-learn-javascript-in-2016-d3a717dd577f
+  - title: 'Scrolljacking: The Good, The Bad, and The Ugly'
+    url: https://blog.hubspot.com/marketing/scrolljacking-the-good-the-bad-the-ugly
+  - title: Hunting With Non-lead Ammunition
+    url: http://www.huntingwithnonlead.org/
+  - title: How is a magnetic field just an electric field with relativity applied?
+    url: https://wtamu.edu/~cbaird/sq/2016/02/18/how-is-a-magnetic-field-just-an-electric-field-with-relativity-applied/
+  - title: The JavaScript phenomenon is a mass psychosis 
+    url: https://hackernoon.com/the-javascript-phenomenon-is-a-mass-psychosis-57adebb09359
+  - title: Illegal Drone Transmitters Could Interfere with Air Traffic Control
+    url: http://www.arrl.org/news/view/illegal-drone-transmitters-could-interfere-with-air-traffic-control-arrl-complaint-asserts
+  - title: 'Myths of Physics: 2. Gravity Is Much Weaker Than Electromagnetism'
+    url: https://www.huffpost.com/entry/myths-of-physics-2-gravit_b_5718233
+  - title: UUID or GUID as Primary Keys? Be Careful!
+    url: https://tomharrisonjr.com/uuid-or-guid-as-primary-keys-be-careful-7b2aa3dcb439?gi=721b359d4d17
+  - title: 'Defining engineers: How Engineers think about the world'
+    url: https://www3.nd.edu/~mjm/engineer.essay.pdf
+  - title: Why is RAID not a backup?
+    url: https://serverfault.com/questions/2888/why-is-raid-not-a-backup
+  - title: Why RAID 5 stops working in 2009
+    url: https://www.zdnet.com/article/why-raid-5-stops-working-in-2009/
+  - title: Why Software Sucks
+    url: https://scottberkun.com/essays/46-why-software-sucks/
