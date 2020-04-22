@@ -3,7 +3,7 @@ serve: clean
 
 build: clean
 	jekyll build;
-	find ./_site -iname '*.html' -exec htmlmin {} {} \;;
+	minify -v -r ./_site/ -o ./_site/
 
 deploy: build
 	rsync -rv ./_site/ root@stiffler.us:/var/www/stiffler.us/;
