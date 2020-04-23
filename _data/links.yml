@@ -1,10 +1,8 @@
 links:
   - title: Jargon File
     url: http://www.catb.org/jargon/html/
-    category: computer
   - title: The case of the 500-mile email
     url: http://www.ibiblio.org/harris/500milemail.html
-    category: computer
   - title: Do DOM tree elements with ids become global variables?
     url: https://stackoverflow.com/questions/3434278/do-dom-tree-elements-with-ids-become-global-variables
   - title: Incorporate monads and category theory
