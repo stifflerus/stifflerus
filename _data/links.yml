@@ -159,3 +159,5 @@ links:
     url: https://brutalist-web.design/
   - title: 'Idris: Type safe printf'
     url: https://www.youtube.com/watch?v=fVBck2Zngjo
+  - title: 'Callbacks are imperative, promises are functional: Node’s biggest missed opportunity'
+    url: https://blog.jcoglan.com/2013/03/30/callbacks-are-imperative-promises-are-functional-nodes-biggest-missed-opportunity/
