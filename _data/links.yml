@@ -161,3 +161,5 @@ links:
     url: https://www.youtube.com/watch?v=fVBck2Zngjo
   - title: 'Callbacks are imperative, promises are functional: Node’s biggest missed opportunity'
     url: https://blog.jcoglan.com/2013/03/30/callbacks-are-imperative-promises-are-functional-nodes-biggest-missed-opportunity/
+  - title: 'async/await is just the do-notation of the Promise monad'
+    url: https://gist.github.com/MaiaVictor/bc0c02b6d1fbc7e3dbae838fb1376c80#monads-and-do-notation
