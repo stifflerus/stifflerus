@@ -7,6 +7,11 @@ title: Links
 
 I'll work on an organization scheme as this list grows.
 
-{% for link in site.data.links.links %}
-- [{{ link.title }}]({{ link.url }})
-{% endfor %}
+<ul>
+    {% for link in site.data.links.links %}
+        {% assign slug = link.title | slugify %}
+        <li id="{{ slug }}">
+            <a href="{{ link.url}}">{{ link.title }}</a> <a href="{{ slug | prepend: '#' }}">🔗</a>
+        </li>
+    {% endfor %}
+</ul>
