@@ -38,7 +38,7 @@ links:
   - title: Why client-side templating is wrong
     url: https://www.onebigfluke.com/2015/01/experimentally-verified-why-client-side.html
   - title: FLIF - Free Lossless Image Format
-    url: FLIF - Free Lossless Image Format
+    url: http://flif.info
   - title: Resource-oriented Client Architecture
     url: https://roca-style.org/
   - title: The Non-Programming Programmer
@@ -161,3 +161,13 @@ links:
     url: https://blog.jcoglan.com/2013/03/30/callbacks-are-imperative-promises-are-functional-nodes-biggest-missed-opportunity/
   - title: 'async/await is just the do-notation of the Promise monad'
     url: https://gist.github.com/MaiaVictor/bc0c02b6d1fbc7e3dbae838fb1376c80#monads-and-do-notation
+  - title: Feudal Security
+    url: https://www.schneier.com/blog/archives/2012/12/feudal_sec.html
+  - title: 'Lockdown: The Coming War on General-Purpose Computing'
+    url: https://boingboing.net/2012/01/10/lockdown.html
+  - title: Calibre Developer Intends to Maintain Python 2 By Himself
+    url: https://bugs.launchpad.net/calibre/+bug/1714107 
+  - title: Tape Measure 2m Yagi Antenna
+    url: http://theleggios.net/wb2hol/projects/rdf/tape_bm.htm
+  - title: htop explained
+    url: https://peteris.rocks/blog/htop
