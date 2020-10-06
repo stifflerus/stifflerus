@@ -219,7 +219,7 @@ The scope of the two contexts is also separated, preventing interference between
 the two. Notice how in the `for` loop, nothing prevents the programmer from modifying
 the iterator ,`i`, from within the body of the loop. The scope of the two contexts
 is tangled.  Modification of the variables
-concerning iteration withing the body of a `for` loop is almost certainly a mistake.
+concerning iteration within the body of a `for` loop is almost certainly a mistake.
 In the `map` example, the callback function has no access to the surrounding
 scope in which it is called. This is a good thing. The `map` function does the job
 of deciding when to call the callback function. This type of control flow

@@ -75,4 +75,4 @@ Notice that the sum type restricts the possible values so that only `hasMeow` xo
 ### Exceptions
 Some logical constraints cannot be encoded into standard type systems without introducing dependent types. Dependent types are a types system where type can depend on values, rather than depending only on other types. Dependent types allow the type system to encode first-order logic properties, such as "a pair of integers where the first is greater than the second". At the time of writing, here is virtually no support for dependent types in popular programming languages. Only research and experimental languages like Idris and Coq support dependent types. Unfortunately it is not possible to encode first-order domain logic into models using non-dependently typed programming languages.
 
-For this reason, this article only applies to the failure to encode zeroeth-order domain logic (that which can be expressed using non-depedent types) into models.
+For this reason, this article only applies to the failure to encode zeroeth-order domain logic (that which can be expressed using non-dependent types) into models.
