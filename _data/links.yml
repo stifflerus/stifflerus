@@ -179,3 +179,5 @@ links:
     url: https://www.nngroup.com/articles/anti-mac-interface/
   - title: Windows and Unix command line equivalents
     url: https://www.lemoda.net/windows/windows2unix/windows2unix.html
+  - title: Megabar - Configuring and Styling the Firefox 75+ Address Bar
+    url: https://www.userchrome.org/megabar-styling-firefox-address-bar.html
